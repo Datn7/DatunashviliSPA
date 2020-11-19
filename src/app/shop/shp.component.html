@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <section class="col-3">
+      <h5 class="ml-3">დალაგება</h5>
+      <select class="custom-select mb-3">
+        <option>ანბანი</option>
+        <option>ფასი</option>
+      </select>
+
+      <h5 class="ml-3">ღვინის ტიპი</h5>
+      <ul class="list-group my-3">
+        <li
+          class="list-group-item"
+          *ngFor="let type of types"
+          [class.active]="type.id === this.wineTypeSelected"
+          [value]="type.id"
+          (click)="onWineTypeSelected(type.id)"
+        >
+          {{ type.name }}
+        </li>
+      </ul>
+      <h5 class="ml-3">ღვინის წელი</h5>
+      <ul class="list-group my-3">
+        <li
+          class="list-group-item"
+          *ngFor="let year of years"
+          [class.active]="year.id === this.wineYearSelected"
+          [value]="year.id"
+          (click)="onWineYearSelected(year.id)"
+        >
+          {{ year.name }}
+        </li>
+      </ul>
+    </section>
+
+    <section class="col-9">
+      <div class="d-flex justify-content-between align-items-center pb-2">
+        <header>
+          <span
+            >გაჩვენებთ<strong> 10</strong> ღვინოს <strong>16</strong>-დან</span
+          >
+        </header>
+        <div class="form-inline mt-2">
+          <input
+            class="form-control mr-2"
+            style="width: 300px"
+            placeholder="ძებნა"
+            type="text"
+          />
+          <button class="btn btn-outline-primary">ძებნა</button>
+          <button class="btn btn-outline-success ml-2">გასუფთავება</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 mt-3" *ngFor="let item of products">
+          <app-product-item [product]="item"></app-product-item>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <form
+      class="example-form"
+      [formGroup]="registerForm"
+      (ngSubmit)="register()"
+    >
+      <div class="form-group">
+        <label class="control-label" style="margin-right: 10px">სქესი </label>
+        <label class="radio-inline">
+          <input
+            class="mr-3"
+            type="radio"
+            value="male"
+            formControlName="gender"
+          />კაცი
+        </label>
+        <label class="radio-inline ml-3">
+          <input
+            class="mr-3"
+            type="radio"
+            value="female"
+            formControlName="gender"
+          />ქალი
+        </label>
+      </div>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>სახელი</mat-label>
+              <input matInput formControlName="username" />
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>ცნობილი როგორც</mat-label>
+              <input matInput formControlName="knownAs" />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <mat-form-field class="example-full-width">
+          <mat-label>პაროლი</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>გაიმეორეთ პაროლი</mat-label>
+          <input matInput type="password" formControlName="confirmPassword" />
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="fill" style="width: 100%">
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="dateOfBirth"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </p>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>ქვეყანა</mat-label>
+              <input
+                matInput
+                placeholder="Ex. San Francisco"
+                formControlName="country"
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>ქალაქი</mat-label>
+              <input
+                matInput
+                placeholder="Ex. California"
+                formControlName="city"
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <button mat-button color="primary" type="submit">რეგისტრაცია</button>
+      <button mat-button color="danger">უკან</button>
+    </form>
+  </div>
+</div>

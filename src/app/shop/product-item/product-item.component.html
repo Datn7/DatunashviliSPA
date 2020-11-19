@@ -1,0 +1,25 @@
+<div
+  class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative h-100"
+>
+  <div class="col p-4 d-flex flex-column position-static">
+    <h3 class="mb-0">{{ product.name }}</h3>
+    <div class="col-auto d-none d-lg-block">
+      <img
+        src="{{ product.pictureUrl }}"
+        alt="{{ product.name }}"
+        class="img-fluid"
+      />
+    </div>
+    <div class="mb-1 text-muted">{{ product.price }} ₾</div>
+    <p class="card-text mb-auto">
+      {{ product.description }}
+    </p>
+    <div class="btn-group mt-auto">
+      <button
+        type="button"
+        class="btn btn-outline-success fas fa-shopping-cart mr-2"
+      ></button>
+      <button type="button" class="btn btn-outline-secondary">დეტალურად</button>
+    </div>
+  </div>
+</div>
